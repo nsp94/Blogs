@@ -228,15 +228,19 @@
   .pkg .time{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:30px;background:var(--paper-2);color:var(--ink-soft)}
   .pkg.feat .time{background:rgba(255,255,255,.14);color:#F4EFE4}
 
-  .pkg .body{padding:18px 22px 8px;flex:1}
-  .pkg .sow{list-style:none;padding:0;margin:0 0 6px}
-  .pkg .sow li{position:relative;padding-left:24px;margin-bottom:9px;font-size:14.5px;line-height:1.45;color:var(--ink-soft)}
-  .pkg .sow li::before{content:"";position:absolute;left:2px;top:7px;width:10px;height:10px;border-radius:50%;border:2px solid var(--brass);background:transparent}
-
-  .pkg .retain{border-top:1px dashed var(--line);margin-top:8px;padding-top:14px}
-  .pkg .ret{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:7px}
-  .pkg .ret span{color:var(--ink-soft)}
-  .pkg .ret b{color:var(--ink);font-weight:700;white-space:nowrap}
+  .pkg .forline{padding:14px 22px 0;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+  .pkg .forline::before{content:"Who it's for — ";font-weight:800;color:var(--brass);letter-spacing:.01em}
+  .pkg .body{padding:6px 22px 8px;flex:1}
+  /* a labelled service block: header (name + price) + what's-included list */
+  .pkg .svc{border-top:1px solid var(--line);padding:15px 0 4px}
+  .pkg .svc:first-child{border-top:0}
+  .pkg .svc .sh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+  .pkg .svc .sn{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--emerald)}
+  .pkg .svc .sp{font-size:13.5px;font-weight:800;color:var(--ink);white-space:nowrap}
+  .pkg .svc .sp .per{font-weight:600;color:var(--muted);font-size:11.5px}
+  .pkg .sow{list-style:none;padding:0;margin:0}
+  .pkg .sow li{position:relative;padding-left:22px;margin-bottom:8px;font-size:14px;line-height:1.42;color:var(--ink-soft)}
+  .pkg .sow li::before{content:"";position:absolute;left:2px;top:6px;width:9px;height:9px;border-radius:50%;border:2px solid var(--brass);background:transparent}
 
   .pkg .bundle{margin:6px 22px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
   .pkg .bundle .bk{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--emerald)}
@@ -391,7 +395,7 @@
 <script>
   /* ---- Tier scope (shared across all markets) ---- */
   const TIERS = [
-    { key:"launch", tier:"Launch", who:"New &amp; upcoming SMBs", time:"~3 weeks", feat:false,
+    { key:"launch", tier:"Launch", who:"New &amp; upcoming SMBs", forline:"Best for first-time online sellers and new brands launching their first serious store.", time:"~3 weeks", feat:false,
       sow:[
         "Discovery &amp; CRO blueprint",
         "Premium Shopify theme set to your brand",
@@ -399,8 +403,18 @@
         "Mobile-first, responsive build",
         "Core apps + up to 2 payment gateways",
         "QA across devices + launch support"
+      ],
+      ops:[
+        "Uptime &amp; security monitoring",
+        "Backups + theme &amp; app updates",
+        "Minor content edits + monthly report"
+      ],
+      seo:[
+        "Technical &amp; on-page audit + fixes",
+        "Keyword mapping, metadata &amp; schema",
+        "AEO/GEO: answer-engine schema + FAQ structuring"
       ]},
-    { key:"growth", tier:"Growth", who:"Medium-sized businesses", time:"~6 weeks", feat:true,
+    { key:"growth", tier:"Growth", who:"Medium-sized businesses", forline:"Best for established brands with steady sales that want a custom store and real conversion gains.", time:"~6 weeks", feat:true,
       sow:[
         "Everything in Launch, plus:",
         "Custom theme — up to 9 templates (18 designs)",
@@ -408,8 +422,20 @@
         "Up to 5 integrations (ERP / CRM / email / reviews)",
         "Structured product data &amp; metafields",
         "Speed optimization + 2 revision rounds"
+      ],
+      ops:[
+        "Everything in Launch, plus:",
+        "Monthly dev hours + CRO tweaks",
+        "App management + priority support",
+        "Quarterly roadmap review"
+      ],
+      seo:[
+        "Everything in Launch, plus:",
+        "Content optimization + internal linking",
+        "Collection &amp; PDP SEO + content cadence",
+        "AEO/GEO: entity definition + LLM citation seeding"
       ]},
-    { key:"scale", tier:"Scale", who:"Large businesses", time:"10–14 weeks", feat:false,
+    { key:"scale", tier:"Scale", who:"Large businesses", forline:"Best for high-volume and enterprise brands needing advanced builds, integrations and dedicated support.", time:"10–14 weeks", feat:false,
       sow:[
         "Everything in Growth, plus:",
         "Advanced / headless or Shopify Plus",
@@ -417,6 +443,18 @@
         "Multi-currency / multi-language ready",
         "A/B testing + dedicated project manager",
         "Phased delivery"
+      ],
+      ops:[
+        "Everything in Growth, plus:",
+        "Dedicated guaranteed dev hours",
+        "A/B testing + integrations upkeep",
+        "Strategic consulting + Plus support"
+      ],
+      seo:[
+        "Everything in Growth, plus:",
+        "Programmatic / category SEO + authority building",
+        "Advanced schema + live dashboards",
+        "AEO/GEO: prompt-set monitoring across AI search"
       ]}
   ];
 
@@ -455,25 +493,30 @@
   function render(marketKey){
     const m = MARKETS[marketKey];
     noteEl.innerHTML = "<b>" + m.name + "</b> — " + m.note;
+    function svc(name, price, per, items){
+      const list = items.map(function(s){ return '<li>' + s + '</li>'; }).join('');
+      const priceHtml = price ? '<span class="sp">' + price + (per ? ' <span class="per">' + per + '</span>' : '') + '</span>' : '';
+      return '<div class="svc"><div class="sh"><span class="sn">' + name + '</span>' + priceHtml + '</div>'
+           + '<ul class="sow">' + list + '</ul></div>';
+    }
     grid.innerHTML = TIERS.map(function(t){
       const pr = m.p[t.key];
       const refLine = pr.ref ? '<div class="ref">' + pr.ref + '</div>' : '';
       const badge = t.feat ? '<div class="badge">Most popular</div>' : '';
-      const sow = t.sow.map(function(s){ return '<li>' + s + '</li>'; }).join('');
       return ''
         + '<div class="pkg' + (t.feat ? ' feat' : '') + '">'
         +   '<div class="top">' + badge
         +     '<div class="tier">' + t.tier + '</div>'
         +     '<div class="who">' + t.who + '</div>'
-        +     '<div class="build"><div class="cap">Design &amp; build</div>'
+        +     '<div class="build"><div class="cap">Design &amp; build · from</div>'
         +       '<span class="amt">' + pr.build + '</span>' + refLine + '</div>'
         +     '<span class="time">Live in ' + t.time + '</span>'
         +   '</div>'
-        +   '<div class="body"><ul class="sow">' + sow + '</ul>'
-        +     '<div class="retain">'
-        +       '<div class="ret"><span>Operations &amp; Maintenance</span><b>' + pr.ops + '/mo</b></div>'
-        +       '<div class="ret"><span>SEO incl. AEO/GEO</span><b>' + pr.seo + '/mo</b></div>'
-        +     '</div>'
+        +   '<div class="forline">' + t.forline + '</div>'
+        +   '<div class="body">'
+        +     svc('Web Design &amp; Development', null, null, t.sow)
+        +     svc('Operations &amp; Maintenance', pr.ops, '/mo', t.ops)
+        +     svc('SEO + AEO/GEO', pr.seo, '/mo', t.seo)
         +   '</div>'
         +   '<div class="bundle"><div class="bk">Flagship bundle · save ~12%</div>'
         +     '<div class="bamt">' + pr.bundle + '</div>'
