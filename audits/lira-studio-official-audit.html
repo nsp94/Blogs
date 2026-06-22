@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lira Studio Official — SEO, AEO, GEO & E-Commerce Audit | SIAR Digital</title>
+<meta name="description" content="Independent SEO, AEO and GEO analysis plus an e-commerce QC of lirastudioofficial.com, prepared by SIAR Digital — scorecard, findings and a prioritised action plan.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="SIAR Digital">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F3EC;--paper-2:#F1EBE0;--ink:#1C1A17;--ink-soft:#46413A;--muted:#807868;
+    --line:#DED6C7;--emerald:#1E4D3B;--emerald-deep:#143528;--brass:#A77B43;--brass-soft:#C9A876;
+    --rule:#C9BFAD;--shadow:rgba(28,26,23,.10);
+    --crit:#B23A33;--high:#C99A2E;--med:#8A8470;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;font-size:18px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(1200px 600px at 78% -8%, rgba(167,123,67,.10), transparent 60%),radial-gradient(900px 500px at -5% 12%, rgba(30,77,59,.07), transparent 55%)}
+  .wrap{position:relative;z-index:1}
+
+  header.hero{max-width:1040px;margin:0 auto;padding:clamp(40px,7vw,80px) 24px clamp(24px,4vw,40px)}
+  .kicker{font-size:12.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:14px}
+  .kicker::before{content:"";width:34px;height:1.5px;background:var(--brass)}
+  .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,5.6vw,64px);line-height:1.04;letter-spacing:-.015em;margin:24px 0 0;color:var(--ink);max-width:17ch}
+  .hero h1 em{font-style:italic;color:var(--emerald);font-weight:500}
+  .dek{font-family:'Fraunces',serif;font-size:clamp(18px,2.3vw,23px);line-height:1.5;color:var(--ink-soft);margin:22px 0 0;max-width:58ch;font-weight:400}
+  .meta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:13.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+  .meta .dot{width:4px;height:4px;border-radius:50%;background:var(--rule)}
+  .meta strong{color:var(--ink);font-weight:700}
+  .heroline{max-width:1040px;margin:clamp(26px,4vw,44px) auto 0;padding:0 24px}
+  .heroline hr{border:0;border-top:1.5px solid var(--rule)}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:clamp(28px,5vw,48px) 24px 40px}
+  p{color:var(--ink-soft);margin-bottom:1.15em}
+  strong{color:var(--ink);font-weight:700}
+  .lead{font-size:20px;line-height:1.6;color:var(--ink)}
+  a{color:var(--emerald);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,3.4vw,36px);line-height:1.12;letter-spacing:-.01em;margin:2em 0 .15em;color:var(--ink)}
+  h2 .num{display:block;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:.7em}
+  h3{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(19px,2.2vw,23px);line-height:1.2;margin:1.5em 0 .4em;color:var(--ink)}
+
+  /* method note */
+  .note{background:var(--paper-2);border-left:3px solid var(--brass);border-radius:0 12px 12px 0;padding:18px 22px;margin:1.4em 0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
+  .note b{color:var(--ink)}
+
+  /* snapshot grid */
+  .snap{display:grid;grid-template-columns:1fr;gap:12px;margin:1.4em 0}
+  @media(min-width:620px){.snap{grid-template-columns:1fr 1fr}}
+  .snap .cell{background:#FCFAF5;border:1px solid var(--line);border-radius:12px;padding:15px 18px}
+  .snap .k{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:3px}
+  .snap .v{font-size:15.5px;color:var(--ink-soft)}
+  .snap .v b{color:var(--ink)}
+
+  /* scorecard */
+  .scorecard{margin:1.6em 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#FCFAF5}
+  .metric{display:grid;grid-template-columns:140px 1fr 64px;align-items:center;gap:14px;padding:15px 18px;border-bottom:1px solid var(--line)}
+  .metric:last-child{border-bottom:0}
+  .metric.total{background:var(--paper-2)}
+  .metric .ml{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--ink)}
+  .metric .track{height:10px;border-radius:6px;background:var(--paper-2);overflow:hidden;border:1px solid var(--line)}
+  .metric .fill{height:100%;border-radius:6px}
+  .metric .sc{text-align:right;font-weight:800;font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .metric .sc small{color:var(--muted);font-weight:600}
+  .f-lo{background:linear-gradient(90deg,#C0584F,#B23A33)}
+  .f-mid{background:linear-gradient(90deg,#D8B25A,#C99A2E)}
+  .f-hi{background:linear-gradient(90deg,#2E6B4F,#1E4D3B)}
+  @media(max-width:520px){.metric{grid-template-columns:96px 1fr 52px;gap:10px;padding:13px 14px}.metric .ml{font-size:14px}}
+
+  /* findings */
+  .findings{margin:1.2em 0}
+  .finding{background:#FCFAF5;border:1px solid var(--line);border-left-width:4px;border-radius:0 12px 12px 0;padding:15px 18px;margin-bottom:12px}
+  .finding.crit{border-left-color:var(--crit)}
+  .finding.high{border-left-color:var(--high)}
+  .finding.med{border-left-color:var(--med)}
+  .finding.good{border-left-color:var(--emerald)}
+  .finding .tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px}
+  .finding.crit .tag{background:rgba(178,58,51,.12);color:var(--crit)}
+  .finding.high .tag{background:rgba(201,154,46,.16);color:#8a6a13}
+  .finding.med .tag{background:rgba(138,132,112,.16);color:var(--med)}
+  .finding.good .tag{background:rgba(30,77,59,.12);color:var(--emerald)}
+  .finding h4{font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:800;color:var(--ink);margin-bottom:4px}
+  .finding p{font-size:14.5px;line-height:1.55;margin:0;color:var(--ink-soft)}
+  .finding p + p{margin-top:.5em}
+  .vflag{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--brass);background:var(--paper-2);border:1px solid var(--line);padding:1px 6px;border-radius:5px;vertical-align:middle}
+
+  /* verdict / callout */
+  .verdict{background:var(--emerald);color:#F4EFE4;border-radius:14px;padding:clamp(24px,4vw,34px);margin:1.6em 0;box-shadow:0 22px 50px -28px rgba(20,53,40,.7)}
+  .verdict .vk{font-size:12px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--brass-soft)}
+  .verdict h3{font-family:'Fraunces',serif;color:#FCFAF4;margin:.5em 0 .4em;font-size:clamp(21px,2.7vw,27px);font-weight:600}
+  .verdict p{color:rgba(244,239,228,.92);margin:0}
+
+  /* action plan */
+  ol.plan{list-style:none;counter-reset:step;padding:0;margin:1.2em 0}
+  ol.plan li{counter-increment:step;position:relative;padding:14px 18px 14px 56px;background:#FCFAF5;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:15px;line-height:1.5;color:var(--ink-soft)}
+  ol.plan li::before{content:counter(step);position:absolute;left:14px;top:13px;width:28px;height:28px;border-radius:50%;background:var(--emerald);color:#FCFAF4;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  ol.plan li b{color:var(--ink)}
+  .phase{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin:1.4em 0 .2em}
+
+  /* CTA */
+  .cta{margin:2em 0 .5em;padding:clamp(28px,5vw,44px);border-radius:16px;background:linear-gradient(150deg,var(--emerald-deep),var(--emerald));color:#F4EFE4;position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,118,.35),transparent 65%)}
+  .cta .vk{font-size:12px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--brass-soft);position:relative}
+  .cta h3{font-family:'Fraunces',serif;font-weight:600;color:#FCFAF4;font-size:clamp(22px,3vw,29px);margin:.45em 0 .4em;position:relative}
+  .cta p{color:rgba(244,239,228,.92);margin:0 0 1.3em;position:relative;max-width:54ch}
+  .cta a.btn{position:relative;display:inline-flex;align-items:center;gap:10px;background:var(--brass);color:#1A1408;text-decoration:none;font-weight:800;padding:14px 26px;border-radius:40px;letter-spacing:.02em;font-size:15px;transition:transform .25s ease,background .25s ease}
+  .cta a.btn:hover{transform:translateY(-2px);background:var(--brass-soft)}
+
+  footer.fin{max-width:var(--maxw);margin:0 auto;padding:10px 24px 70px;color:var(--muted);font-size:13px}
+  footer.fin hr{border:0;border-top:1px solid var(--line);margin-bottom:18px}
+  footer.fin a{color:var(--ink-soft);word-break:break-word}
+  footer.fin em{font-style:italic}
+
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">SIAR Digital&nbsp;·&nbsp;Store Audit</div>
+    <h1>Lira Studio Official — <em>SEO, AEO, GEO</em> &amp; e-commerce review</h1>
+    <p class="dek">An outside-in assessment of lirastudioofficial.com — how search engines and AI engines see the store, how it performs as a Shopify e-commerce experience, and the highest-leverage fixes to grow discoverability and conversion.</p>
+    <div class="meta">
+      <span>Prepared by <strong>SIAR Digital</strong></span>
+      <span class="dot"></span>
+      <span>Shopify Select Partner</span>
+      <span class="dot"></span>
+      <span>22 June 2026</span>
+    </div>
+  </header>
+  <div class="heroline"><hr></div>
+
+  <main>
+    <p class="lead">Lira Studio Official is a promising, on-brand Pakistani modest-pret womenswear store with real demand behind it — but it is leaving meaningful organic visibility and conversion on the table. Below: a scorecard, the findings by discipline, and a prioritised plan.</p>
+
+    <div class="note">
+      <b>Method &amp; scope.</b> This audit was built <b>outside-in</b> — from what Google and AI engines have actually indexed about the store, the brand's external footprint, and Shopify's known platform behaviour — because direct page crawling was not available at the time of writing. That is the correct lens for SEO/AEO/GEO, but a handful of on-page technicals (Core Web Vitals, image alt text, full JSON-LD, canonical/hreflang, checkout flow) are marked <span class="vflag">VERIFY</span> and should be confirmed with a direct crawl, which SIAR can run on request.
+    </div>
+
+    <h2><span class="num">Snapshot</span>What we're looking at</h2>
+    <div class="snap">
+      <div class="cell"><div class="k">Brand</div><div class="v"><b>Lira Studio Official</b> — women's modest pret (dresses, co-ord sets, gowns, linen, festive/Eid)</div></div>
+      <div class="cell"><div class="k">Platform</div><div class="v"><b>Shopify</b> (confirmed via URL structure &amp; title pattern)</div></div>
+      <div class="cell"><div class="k">Market &amp; base</div><div class="v">Lahore, Pakistan · ships worldwide · ~Rs. 14,400–19,000 PKR</div></div>
+      <div class="cell"><div class="k">Audience</div><div class="v">~133K Instagram followers · active Facebook · <em>"Everyday luxury, perfected"</em></div></div>
+      <div class="cell"><div class="k">Merchandising</div><div class="v">Segmented by fabric (crepe, linen, silk, karandi, velvet…) &amp; occasion (everyday, festive, co-ord)</div></div>
+      <div class="cell"><div class="k">Seasonality</div><div class="v">Live drops: Eid '26, Spring/Summer '26, Immediate Delivery</div></div>
+    </div>
+
+    <h2><span class="num">The verdict</span>Scorecard</h2>
+    <div class="scorecard">
+      <div class="metric"><div class="ml">SEO</div><div class="track"><div class="fill f-mid" style="width:65%"></div></div><div class="sc">6.5<small>/10</small></div></div>
+      <div class="metric"><div class="ml">AEO</div><div class="track"><div class="fill f-lo" style="width:35%"></div></div><div class="sc">3.5<small>/10</small></div></div>
+      <div class="metric"><div class="ml">GEO</div><div class="track"><div class="fill f-lo" style="width:30%"></div></div><div class="sc">3.0<small>/10</small></div></div>
+      <div class="metric"><div class="ml">E-commerce QC</div><div class="track"><div class="fill f-mid" style="width:60%"></div></div><div class="sc">6.0<small>/10</small></div></div>
+      <div class="metric total"><div class="ml">Overall</div><div class="track"><div class="fill f-mid" style="width:50%"></div></div><div class="sc">5.0<small>/10</small></div></div>
+    </div>
+    <p>Good bones held back by a few high-impact gaps. The single biggest opportunity is <strong>AEO/GEO</strong> — a category almost no competitor in this market optimises for yet.</p>
+
+    <!-- SEO -->
+    <h2><span class="num">01 — Search</span>SEO analysis · 6.5/10</h2>
+    <div class="findings">
+      <div class="finding good rv"><span class="tag">Strength</span><h4>Strong, keyword-rich foundations</h4><p>The homepage title — <em>"Lira Studio Official: Solid Modest Pret dresses for Women online"</em> — targets real intent. Collections are well-built and indexed with descriptive titles/descriptions, and products + prices are read by Google (Product structured data is present).</p></div>
+      <div class="finding crit rv"><span class="tag">Critical</span><h4>SKU-coded product titles waste your best SEO real estate</h4><p>A large share of products are named <em>ST-003, ST-009, ST-019, ST-020, ST-031, ST-032, ST-033…</em> These titles carry no keywords and no search intent, weakening the product <code>&lt;title&gt;</code>, H1 and click-through. Rename every product descriptively, e.g. <em>"Olive Karandi Embroidered Co-ord Set"</em>.</p></div>
+      <div class="finding crit rv"><span class="tag">Critical</span><h4>Price indexing anomaly</h4><p>One product (ST-009) is indexed at <em>"Rs.170,000"</em> — almost certainly meant to be Rs.17,000. A single stray zero kills conversion and can poison feed/Merchant data. Audit all prices and the Product schema <code>price</code> field.</p></div>
+      <div class="finding high rv"><span class="tag">High</span><h4>No content / blog layer</h4><p>No editorial content is indexed, so the store is invisible for informational and styling long-tail (<em>"how to style a kaftan for Eid"</em>, <em>"linen vs crepe for summer pret"</em>) — content that also feeds AEO and GEO.</p></div>
+      <div class="finding high rv"><span class="tag">High <span class="vflag">VERIFY</span></span><h4>International SEO unconfirmed</h4><p>The store ships worldwide, but multi-currency, hreflang and market routing could not be confirmed. Without them, relevance and conversion leak for the large GCC/US/UK Pakistani-diaspora demand.</p></div>
+      <div class="finding med rv"><span class="tag">Medium <span class="vflag">VERIFY</span></span><h4>Technical hygiene</h4><p>Confirm Core Web Vitals, image alt text, and canonical handling (paginated <code>?page=</code> collection URLs are indexed — watch for duplicate-content dilution).</p></div>
+    </div>
+
+    <!-- AEO -->
+    <h2><span class="num">02 — Answers</span>AEO analysis · 3.5/10</h2>
+    <p>How well can answer engines (Google AI Overviews, voice, featured snippets) extract direct answers from the site? Currently, weakly — and this is a fast, first-mover win.</p>
+    <div class="findings">
+      <div class="finding crit rv"><span class="tag">Critical</span><h4>No FAQ page and no FAQPage schema</h4><p>Answer engines reward concise, structured Q&amp;A. The raw material exists (shipping times, customs, fabrics, fit) but it is scattered across product pages and the shipping page rather than structured for extraction.</p></div>
+      <div class="finding high rv"><span class="tag">High</span><h4>Key buyer questions are unanswerable by an AI</h4><p><em>"Do you ship to the UK/US?", "What's the return policy?", "How long is delivery?", "What size am I?", "How do I care for karandi/silk?"</em> — precisely the questions AEO captures. Convert these into structured answer blocks.</p></div>
+      <div class="finding high rv"><span class="tag">High</span><h4>No size guide</h4><p>Sizing is implied only via model height on product pages. A measurement-based size guide answers fit questions and reduces returns — especially for international buyers.</p></div>
+    </div>
+
+    <!-- GEO -->
+    <h2><span class="num">03 — Generative</span>GEO analysis · 3.0/10</h2>
+    <p>How well do ChatGPT, Gemini and Perplexity understand and cite this brand? Currently poorly — with a real risk of misattribution.</p>
+    <div class="findings">
+      <div class="finding crit rv"><span class="tag">Critical</span><h4>Severe brand-name collision</h4><p>"Lira" is crowded: <b>Lira Clothing</b> (US streetwear, at Pacsun/Tillys), <b>Lira Studio BD</b> (Bangladesh), <b>Maya Pret "Lira"</b>, <b>Verb "Lira Dress"</b>, <b>LYRA Pakistan</b>. An AI asked about "Lira Studio" can easily surface the wrong brand. <b>Disambiguation is the #1 GEO job.</b></p></div>
+      <div class="finding crit rv"><span class="tag">Critical</span><h4>Weak brand entity</h4><p>No evidence of a Knowledge Panel / Wikidata / strong Organization graph. GEO needs machine-readable identity: Organization &amp; Brand schema with <code>sameAs</code> (Instagram, Facebook), consistent name/address/phone, and an authoritative About page stating plainly who/what/where.</p></div>
+      <div class="finding high rv"><span class="tag">High</span><h4>Thin third-party citations &amp; no on-site reviews</h4><p>Generative engines favour brands corroborated across the web (press, listings, reviews, mentions). The footprint is mostly owned social, and no on-site review system was detected — little for an AI to cite.</p></div>
+      <div class="finding med rv"><span class="tag">Medium</span><h4>Generic identity signals</h4><p>A Gmail contact address and no physical address weaken the trust/entity graph that both buyers and AI engines read.</p></div>
+    </div>
+
+    <!-- QC -->
+    <h2><span class="num">04 — Storefront</span>E-commerce QC · 6.0/10</h2>
+    <div class="findings">
+      <div class="finding good rv"><span class="tag">Strength</span><h4>Strong brand, merchandising &amp; demand</h4><p>Clear aesthetic and positioning, ~133K engaged followers, excellent collection taxonomy (fabric × occasion), active seasonal drops, and a smart <em>"Immediate Delivery"</em> segment separating ready-to-ship from made-to-order.</p></div>
+      <div class="finding crit rv"><span class="tag">Critical <span class="vflag">VERIFY</span></span><h4>Order flow may be semi-manual</h4><p>The shipping page states orders dispatch <em>"within 2 weeks after a sales advisor sends an order confirmation."</em> If checkout isn't fully automated (a manual/WhatsApp confirmation step), it is a major CRO and scalability leak. Confirm that Shopify checkout completes the sale end-to-end.</p></div>
+      <div class="finding crit rv"><span class="tag">Critical</span><h4>No on-site reviews / ratings</h4><p>No review app detected — no social proof on product pages, no rating rich snippets, weaker conversion and weaker AEO/GEO. Add Judge.me or Loox and seed from existing customers.</p></div>
+      <div class="finding high rv"><span class="tag">High <span class="vflag">VERIFY</span></span><h4>Trust signals are thin</h4><p>Gmail business email, no physical address, and a returns/exchange policy that isn't clearly published. For higher-value festive and international purchases, this suppresses conversion. Add a branded email, address, visible returns terms and trust badges.</p></div>
+      <div class="finding high rv"><span class="tag">High</span><h4>Slow, customer-pays shipping</h4><p><em>"All shipping costs are the customer's responsibility,"</em> ~2-week dispatch locally, 3–4 weeks international plus customs on the buyer. Acceptable for made-to-order, but set expectations clearly and consider free-shipping thresholds to lift AOV.</p></div>
+      <div class="finding med rv"><span class="tag">Medium <span class="vflag">VERIFY</span></span><h4>Mobile UX, speed &amp; payments</h4><p>Confirm mobile experience, page speed and payment gateways (note the Pakistan Shopify third-party gateway surcharge). SKU-named products also hurt on-site search and recall.</p></div>
+    </div>
+
+    <div class="verdict rv">
+      <div class="vk">Bottom line</div>
+      <h3>A strong brand on a capable platform, under-optimised for how people now discover and trust stores.</h3>
+      <p>Fix the SEO hygiene, structure the answers, build the brand entity, and tighten trust and order flow — and this store can convert materially more of the demand it already attracts.</p>
+    </div>
+
+    <h2><span class="num">What to do</span>Prioritised action plan</h2>
+    <div class="phase">Quick wins · 1–2 weeks</div>
+    <ol class="plan">
+      <li>Fix the <b>ST-009 price</b> and audit all prices &amp; Product schema.</li>
+      <li><b>Rename every SKU-coded product</b> to descriptive, keyword-led titles with an SEO title template: <em>{Product} {Fabric} {Occasion} – LIRA</em>.</li>
+      <li>Publish/verify a <b>Returns &amp; Exchange policy</b>; add a <b>branded email</b> + address; install a <b>reviews app</b> and seed reviews.</li>
+      <li>Add an <b>FAQ page + FAQPage schema</b> and a measurement-based <b>Size Guide</b>.</li>
+    </ol>
+    <div class="phase">Strategic · 1–3 months</div>
+    <ol class="plan">
+      <li><b>GEO entity build:</b> Organization/Brand schema with <code>sameAs</code>, an authoritative About page, consistent NAP, third-party citations/PR, Google Business &amp; Wikidata.</li>
+      <li><b>Content / blog engine</b> for styling and fabric-care long-tail — feeding SEO, AEO and GEO at once.</li>
+      <li><b>International SEO/CRO:</b> multi-currency, hreflang, and clearer shipping/returns for diaspora markets (GCC, US, UK, Canada).</li>
+      <li><b>Confirm &amp; streamline the order/checkout flow</b> for fully automated purchase, plus a CRO pass on the product page (sticky add-to-cart, trust badges, delivery-date clarity).</li>
+    </ol>
+
+    <div class="cta rv">
+      <div class="vk">How SIAR can help</div>
+      <h3>We can execute every item above — and own the result.</h3>
+      <p>The AEO/GEO build is the first-mover layer of our SEO package; the trust, CRO and order-flow fixes sit in Web Design &amp; CRO and Operations; and the product renaming / price audit is a natural Content Concierge engagement. We can scope and quote it by tier on a short call.</p>
+      <a class="btn" href="https://siardigital.com/e-commerce-services/">Book a working session →</a>
+    </div>
+  </main>
+
+  <footer class="fin">
+    <hr>
+    <p><strong>Sources &amp; signals.</strong> lirastudioofficial.com (homepage, collections, product, shipping &amp; handling, privacy policy, contact pages — as indexed), Instagram @lirastudioofficial, Facebook, and brand-name-collision references (Lira Clothing US, Lira Studio BD). Findings marked <span class="vflag">VERIFY</span> require a direct technical crawl to confirm. <em>This document is an independent assessment prepared by SIAR Digital and is not affiliated with or endorsed by Lira Studio Official. © SIAR Digital — Shopify Select Partner.</em></p>
+  </footer>
+
+</div>
+<script>
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll(".rv").forEach(function(el){ el.classList.add("in"); });
+  }
+</script>
+</body>
+</html>
